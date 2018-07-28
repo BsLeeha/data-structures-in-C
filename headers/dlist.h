@@ -1,34 +1,34 @@
-#ifndef DIST_H
-#define DIST_H
+#pragma once
 
-typedef struct DListElem_{
+typedef struct DListNode_{
     void              *data;
-    struct DListElem_ *prev;
-    struct DListElem_ *next;
-}DistElem;
+    struct DListNode_ *prev;
+    struct DListNode_ *next;
+}DListNode;
 
 
 typedef struct DList_{
     int      size;
 
-    void     (*destory)(void *data);
+    void     (*destory_list)(void *list);
+    void     (*destory_data)(void *data);
     void     (*match)(const void *key1, const void *key2);
 
-    DistElem *head;
-    DistElem *tail;
-}DList_;
+    DListNode *head;
+    DListNode *tail;
+}DList;
 
 /* public interfaces */
 
-Dlist *dlist_init(DList *dlist, void (*destory)(void *data));
+DList *dlist_init(DList *dlist, void (*destory_data)(void *data));
 
 int dlist_destory(DList *dlist);
 
-int dlist_ins_prev(DList *dlist, DListElem *elem, const void *data);
+int dlist_ins_prev(DList *dlist, DListNode *node, const void *data);
 
-int dlist_ins_next(DList *dlist, DListElem *elem, const void *data);
+int dlist_ins_next(DList *dlist, DListNode *node, const void *data);
 
-int dlist_remove(DList *dlist, DListElem *elem, void **data);
+int dlist_remove(DList *dlist, DListNode *node, void **data);
 
 #define dlist_size(dlist) ((dlist)->size)
 
@@ -36,14 +36,12 @@ int dlist_remove(DList *dlist, DListElem *elem, void **data);
 
 #define dlist_tail(dlist) ((dlist)->tail)
 
-#define dlist_is_head(dlist, elem) ((elem == (dlist)->head) ? 1 : 0)
+#define dlist_is_head(dlist, node) ((node == (dlist)->head) ? 1 : 0)
 
-#define dlist_is_tail(dlist, elem) ((elem == (dlist)->tail) ? 1 : 0)
+#define dlist_is_tail(dlist, node) ((node == (dlist)->tail) ? 1 : 0)
 
-#define elem_data(elem) ((elem)->data)
+#define node_data(node) ((node)->data)
 
-#define elem_prev(elem) ((elem)->prev)
+#define node_prev(node) ((node)->prev)
 
-#define elem_next(elem) ((elem)->next)
-
-#endif // DIST_H
+#define node_next(node) ((node)->next)
