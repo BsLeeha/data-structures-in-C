@@ -14,15 +14,15 @@ int set_insert(Set *set, const void *data){
     return list_ins_next(set, set->tail, data);
 }
 
-int set_remove(Set *set, void **data){
+int set_remove(Set *set, void *data, void **old_data){
     ListNode *node = set->head, *prev= NULL;
-    while(node && !(set->match(node->data, *data))){
+    while(node && !(set->match(node->data, data))){
         prev = node;
         node = node->next;
     }
     if(node == NULL) return -1;
 
-    return list_rem_next(set, prev ,data);
+    return list_rem_next(set, prev, old_data);
 }
 
 int set_insert_trick(Set *set, void *data){

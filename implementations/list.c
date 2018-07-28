@@ -83,7 +83,7 @@ int list_rem_next(List *list, ListNode *node, void **data){
     return 0;
 }
 
-void list_for_each(List *list, Print print){
+void list_for_each(const List *list, Print print){
     assert(print != NULL);
 
     for(ListNode *iter = list_head(list); iter != NULL; iter = iter->next)

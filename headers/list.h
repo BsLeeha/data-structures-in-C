@@ -1,6 +1,8 @@
 #pragma once
 #include <stdio.h>
 
+/* singly linked list */
+
 // ListNode dynamically allocated and freed it in program
 // List and node data allocated and freed by user
 typedef struct ListNode_{
@@ -24,7 +26,7 @@ typedef void (*Print) (const void *data);
 
 /* public interface */
 
-List *list_init(List *list, void (*destory)(void *data));
+List *list_init(List *list, void (*destory_data)(void *data));
 
 int list_destory(List *list);
 
@@ -36,7 +38,7 @@ int list_ins_next(List *list, ListNode *node, const void *data);
 
 int list_rem_next(List *list, ListNode *node, void **data);
 
-void list_for_each(List *list, Print print);
+void list_for_each(const List *list, Print print);
 
 #define list_size(list) ((list)->size)
 

@@ -32,8 +32,10 @@ int bitree_ins_trick(BiTree *bt, BiTreeNode *node, const void *data, bool left);
 
 int bitree_rem_trick(BiTree *bt, BiTreeNode *node, bool left);
 
+// remove left subtree
 #define bitree_rem_left(bt, node) (bitree_rem_trick((bt), (node), true))
 
+// remove right subtree
 #define bitree_rem_right(bt, node) (bitree_rem_trick((bt), (node), false))
 
 // merge two trees and set the new node of data as the root node

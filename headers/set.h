@@ -1,5 +1,4 @@
-#ifndef SET_H
-#define SET_H
+#pragma once
 
 #include "list.h"
 
@@ -16,7 +15,7 @@ Set *set_init(Set *set, int (*match)(const void *key1, const void *key2),
 
 int set_insert(Set *set, const void *data);
 
-int set_remove(Set *set, void **data);
+int set_remove(Set *set, void *data, void **old_data);
 
 Set *set_union(Set *setu, const Set *set1, const Set *set2);
 
@@ -33,5 +32,3 @@ int set_is_equal(const Set *set1, const Set *set2);
 #define set_for_each list_for_each
 
 #define set_size list_size
-
-#endif // SET_H

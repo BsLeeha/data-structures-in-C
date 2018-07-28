@@ -1,6 +1,8 @@
 #ifndef CLIST_H
 #define CLIST_H
 
+/* circular linked list */
+
 typedef struct CListNode_{
     void              *data;
     struct CListNode_ *next;

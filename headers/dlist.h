@@ -1,5 +1,7 @@
 #pragma once
 
+/* doubly linked list */
+
 typedef struct DListNode_{
     void              *data;
     struct DListNode_ *prev;
