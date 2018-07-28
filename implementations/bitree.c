@@ -7,7 +7,7 @@ BiTree *bitree_init(BiTree *bt, void (*destory_data)(void *data)){
     if(bt  == NULL) {
         if((bt = malloc(sizeof *bt)) == NULL) return NULL;
         bt->destory_tree = free;
-    }else bt->destory_data = NULL;
+    }else bt->destory_tree = NULL; 
 
     bt->root          = NULL;
     bt->size          = 0;

@@ -1,7 +1,6 @@
 #ifndef DIST_H
 #define DIST_H
 
-// structure for double linked list elmeents
 typedef struct DListElem_{
     void              *data;
     struct DListElem_ *prev;
@@ -9,7 +8,6 @@ typedef struct DListElem_{
 }DistElem;
 
 
-// structure for double linked lists
 typedef struct DList_{
     int      size;
 
@@ -20,8 +18,9 @@ typedef struct DList_{
     DistElem *tail;
 }DList_;
 
-// public interfaces
-int dlist_init(DList **dlist, void (*destory)(void *data));
+/* public interfaces */
+
+Dlist *dlist_init(DList *dlist, void (*destory)(void *data));
 
 int dlist_destory(DList *dlist);
 
