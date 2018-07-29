@@ -1,5 +1,15 @@
 # data-structures-in-C
-a small library with implementations of data structures in C
+A small library with implementation of data structures in C.
+
+Implemented data structures:
+
+* Linked List(Circular linked list, double linked list)
+* Stack
+* Queue
+* Binary Tree
+* Chained Hash Table
+* Set
+* Graph
 
 # Running test
 * Clone the repo
