@@ -5,6 +5,6 @@ a small library with implementations of data structures in C
 * Clone the repo
 * Run `autoconf --install` to generate build system files
 * Run `./configure && make` to configure and build the project
-* RUn `make test` to test file
+* Run `make test` to test the file
 * Run `make clean` to clean object files
 * Run `rm -r !(configure.ac|Makefile.am|src) && cd src && rm -r !(headers|implementations|tests|Makefile.am) && cd ..` to clean useless files
