@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "tests.h"
+#include "tests/tests.h"
 
 int main(){
     stack_test();
